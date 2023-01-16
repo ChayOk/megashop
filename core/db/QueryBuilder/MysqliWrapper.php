@@ -141,14 +141,16 @@ class MySQLiWrapper extends \Core\AbstractCore
             }
         }
         //die($this->query);
-        return self::$wrapper;
+        return self::$instance;
     }
     
     public function delete($table)
     {
         $this->query = "DELETE FROM $table ";
 
-        return self::$wrapper;
+        // self::query($this->query);
+
+        return self::$instance;
     }
 
     //-----------------------------------------------
@@ -256,7 +258,7 @@ class MySQLiWrapper extends \Core\AbstractCore
         
         $this->query .= ';';
         $msc = $this->startTimer();
-        self::$instance->query($this->query) or die("Error: $query");
+        self::$instance->query($this->query) or die("Error: $this->query");
         $this->endTimer($msc);
         
         return self::$instance;
@@ -273,7 +275,7 @@ class MySQLiWrapper extends \Core\AbstractCore
     public function truncate($table)
     {
         $this->query = "TRUNCATE $table";
-        self::$instance->query($this->query) or die("Error: $query");
+        self::$instance->query($this->query) or die("Error: $this->query");
     }
 
     //--------------Методы для разбора коллекции-----------------

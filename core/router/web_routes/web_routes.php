@@ -55,6 +55,22 @@ class web_routes
             'method' => 'get',
             'middleware' => 'anyone',
         ),
+        "delete" => array (
+            'route' => '/delete',
+            'file' => 'app/controllers/DeleteController.php',
+            'class' => 'App\Controllers\DeleteController',
+            'function' => 'index',
+            'method' => 'get',
+            'middleware' => 'anyone',
+        ),
+        "update" => array (
+            'route' => '/update',
+            'file' => 'app/controllers/UpdateController.php',
+            'class' => 'App\Controllers\UpdateController',
+            'function' => 'index',
+            'method' => 'get',
+            'middleware' => 'anyone',
+        ),
     ];
 
     public static function FindRoute($route){
@@ -66,8 +82,8 @@ class web_routes
             }
 			
 			return self::$routes["404"];
-        } catch (Exception $e){
-            throw new Exception("Указанный путь не найден!");
+        } catch (\Exception $e){
+            throw new \Exception("Указанный путь не найден!");
         }
 
         return 0;

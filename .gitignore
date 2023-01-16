@@ -3,3 +3,4 @@ composer.lock
 INFO.txt
 /.idea
 /core/template/cache
+megashop.sql

@@ -44,7 +44,7 @@ class DbClass extends \Core\AbstractCore
         $this->pdo = new \PDO(
         'mysql:host=localhost;dbname=megashop',
             $this->iniData['user'],
-            $this->iniData['pass']
+            // $this->iniData['pass'] //убрать комментарий, если в админке бд есть пароль
         );
    }
 
