@@ -33,6 +33,8 @@ $( ".modalUpdate" ).on('click', function(event) {
     $.post( "updateData", jsonData )
         .done(function() {
           $(".update").attr('id', updateId);
+          $(".idProd").attr('id', updateId);
+          $(".idProd").attr('value', updateId);
           $("#updateName").attr('value', updateName);
           $("#updatePrice").attr('value', updatePrice);
         }

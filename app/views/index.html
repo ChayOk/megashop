@@ -67,10 +67,12 @@
         <form method="post" action="update" id="formUpdate" class="update">
             <div class="modal-body">
               <label for="name">Название</label>
-              <input type="text" id="updateName" value="{{nameProd}}">
+              <input type="text" id="updateName" name="updateName" value="{{nameProd}}">
               
               <label for="name">Цена</label>
-              <input type="number" id="updatePrice" value="{{priceProd}}">
+              <input type="number" id="updatePrice" name="updatePrice" value="{{priceProd}}">
+
+              <input type="hidden" name="idProdUpdate" id="{{idProd}}" class="idProd" value="{{idProd}}">
             
             </div>
             <div class="modal-footer">
