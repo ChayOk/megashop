@@ -15,8 +15,8 @@ $( "#form" ).submit(function( event ) {
         .done(function() {
             table.append(`<tr><td data-id=`+lastId+`>` +lastId+ `</td><td>`+name+`</td><td>`+price+`</td>
             <td style="display:flex;">
-                <button type="button" class="btn btn-primary delBtn delete" id="{{value['id']}}" style="margin-right:5px">&#10006;</button>                
-                <button type="button" class="btn btn-primary modalUpdate" data-toggle="modal" data-target="#exampleModal">&#9998;</button>
+            <button type="button" class="btn btn-primary delBtn" id="{{value['id']}}" style="margin-right:5px">&#10006;</button>
+            <button type="button" class="btn btn-primary modalUpdate" data-toggle="modal" id="{{value['id']}}" data-name="{{value['name']}}" data-price="{{value['price']}}" data-target="#exampleModal">&#9998;</button>
             </tr>`);
         }
     );

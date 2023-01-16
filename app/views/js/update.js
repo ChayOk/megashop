@@ -1,27 +1,4 @@
-// $( "#formUpdate" ).submit(function( event ) {
-//     event.preventDefault();
-//     let idProd = ( $("#idProd").val() )
-//     let name = ( $("#name").val() )
-//     let price = ( $("#price").val() )
-//     let table = ($("#table"));
-//     let lastId = $("#table tr td[data-id]").last().data('id')
-//     if (!lastId) {
-//         lastId = 1;
-//     } else {
-//         lastId += 1;
-//     }
-//     console.log(lastId)
-//     jsonData = {name: name, price: price}
-//     $.post( "update", jsonData )
-//         .done(function() {
-//             table.append(`<tr><td data-id=`+lastId+`>` +lastId+ `</td><td>`+name+`</td><td>`+price+`</td>
-//             <td><button type="button" class="btn btn-primary delBtn delete" id="{{value['id']}}">&#10006;</button><button type="button" class="btn btn-primary">&#9998;</button></td>
-//             </tr>`);
-//         }
-//     );
-    
-// });
-
+// Отправка данных в форму
 $( ".modalUpdate" ).on('click', function(event) {
     event.preventDefault();
     
@@ -41,11 +18,22 @@ $( ".modalUpdate" ).on('click', function(event) {
     );
   });
 
-$( ".modalAdd" ).click(function() {
-    $(".update").hide();
-    $(".add").show(); 
-});
-$( ".modalUpdate" ).click(function() {
-    $(".add").hide();
-    $(".update").show();
-});
+// Отправка данных на сервер и динамическое изменение данных 
+// (данные уходят, запрос строится, динамическое обновление работает, но в бд изменения не происходят)
+// ДЛЯ ПРОВЕРКИ РАСКОММЕНТИТЬ
+
+/*$( ".updateForm" ).submit(function(event) {
+event.preventDefault();
+
+let updatedId = $(".idProd").val();
+let updatedName = $("#updateName").val();
+let updatedPrice = $("#updatePrice").val();
+
+jsonData = {id: updatedId, name: updatedName, price: updatedPrice}
+$.post( "update", jsonData )
+    .done(function() {
+        $(".nameProd"+updatedId).html(updatedName);
+        $(".priceProd"+updatedId).html(updatedPrice);
+    }
+    );
+});*/

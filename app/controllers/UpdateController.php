@@ -16,8 +16,8 @@ class UpdateController extends Controller
     public function index()
     {
         $idProd = (int)$_POST['idProdUpdate'];
-        $data['name'] = $_POST['updateName'];
-        $data['price'] = (float)$_POST['updatePrice'];                
+        $data['name'] = $_POST['updatedName'];
+        $data['price'] = (float)$_POST['updatedPrice'];                
 
         $this->productModel->updateProduct($data, $idProd);
     }
