@@ -140,7 +140,7 @@ class MySQLiWrapper extends \Core\AbstractCore
                 $this->query .= is_string($v) ?   "'$v'" : "$v";
             }
         }
-        //die($this->query);
+        die($this->query);
         return self::$instance;
     }
     

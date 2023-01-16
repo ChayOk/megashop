@@ -46,7 +46,7 @@ class ProductModel extends Model
 
     public function updateProduct(array $data, $idProd)
     {
-       $result = $this->queryBuilder->update($this->table, $data)->where(['id', '=', $idProd]);
+       $result = $this->queryBuilder->update($this->table, $data)->where(['id', '=', $idProd])->get();
        
        return ($result);
     }
