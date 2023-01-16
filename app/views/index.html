@@ -24,21 +24,14 @@
 
         {%for k,v in value %}
           {%if k == 'id' %}
-            <td style="display:flex;">
-              <form method="post" action="delete" id="formDel" style="margin-right: 5px;">
-                <input type="hidden" id="idProd" name="idProd" value="{{v}}" data-id="{{v}}">
-                <!-- <button type="button" class="btn btn-primary delBtn" id="{{value['id']}}">&#10006;</button> -->
-                <!-- <button type="submit" class="btn btn-primary">&#9998;</button> -->
-                <button type="submit" class="btn btn-primary delBtn delete" id="{{value['id']}}">&#10006;</button>
-              </form>
-              <form method="post" action="" id="formUpdate">
-                <input type="hidden" id="idProd" name="idProd" value="{{v}}" data-id="{{v}}">
-                <button type="submit" class="btn btn-primary modalUpdate" data-toggle="modal" data-target="#exampleModal">&#9998;</button>
-              </form>
-            </td>
-          </tr>
+            
           {% endif %}
         {% endfor %}
+        <td style="display:flex;">
+            <button type="button" class="btn btn-primary delBtn" id="{{value['id']}}" style="margin-right:5px">&#10006;</button>
+            <button type="button" class="btn btn-primary modalUpdate" data-toggle="modal" data-target="#exampleModal">&#9998;</button>
+        </td>
+      </tr>
         
     {% endfor %}
     
@@ -79,12 +72,11 @@
         <!-- update -->
         <form method="post" action="update" id="formUpdate" class="update">
             <div class="modal-body">
-            
-                <label for="name">Название</label>
-                <input type="text" id="name" value="">  
-                <label for="name">Цена</label>
-                <input type="number" id="price" value="">
-    
+              <label for="name">Название</label>
+              <input type="text" id="name" value="{{v}}">
+              
+              <label for="name">Цена</label>
+              <input type="number" id="price" value="{{v}}">
             
             </div>
             <div class="modal-footer">

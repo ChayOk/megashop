@@ -37,13 +37,13 @@ class ProductModel extends Model
        return ($result);
     }
 
-    public function deleteProduct($idProd)
+    public function deleteProduct($data)
     {
-       $result = $this->queryBuilder->delete($this->table)->where(['id', '=', $idProd])->get();
+       $result = $this->queryBuilder->delete($this->table)->where(['id', '=', $data])->get();
        
        return ($result);
     }
-    
+
     public function updateProduct(array $data, $idProd)
     {
        $result = $this->queryBuilder->update($this->table, $data)->where(['id', '=', $idProd]);

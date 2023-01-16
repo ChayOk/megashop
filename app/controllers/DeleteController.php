@@ -15,7 +15,7 @@ class DeleteController extends Controller
 
     public function index()
     {
-        $idProd = (int)$_POST['idProd'];
-        $this->productModel->deleteProduct($idProd);
+        $data = (int)$_POST['id'];
+        $this->productModel->deleteProduct($data);
     }
 }
